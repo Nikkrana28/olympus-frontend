@@ -27,5 +27,11 @@ module.exports = {
     "no-nested-ternary": "off",
     "no-restricted-syntax": "off",
     "no-plusplus": "off",
+    'prettier/prettier': [
+      'error',
+      {
+        'endOfLine': 'auto',
+      }
+    ]
   },
 };
