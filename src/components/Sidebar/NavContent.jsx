@@ -5,6 +5,7 @@ import externalUrls from "./externalUrls";
 import { ReactComponent as StakeIcon } from "../../assets/icons/stake.svg";
 import { ReactComponent as BondIcon } from "../../assets/icons/bond.svg";
 import { ReactComponent as DashboardIcon } from "../../assets/icons/dashboard.svg";
+import Vector from "./../../assets/images/overview.png";
 import { ReactComponent as OlympusIcon } from "../../assets/icons/olympus-nav-header.svg";
 import Logo from "./../../assets/logo.png";
 import Betsold from "./../../assets/images/BETSold.png";
@@ -82,7 +83,7 @@ function NavContent() {
   }, []);
 
   return (
-    <Paper className="dapp-sidebar">
+    <Paper className="dapp-sidebar" style={{ backgroundColor: "#0F0F0F" }}>
       <Box className="dapp-sidebar-inner" display="flex" justifyContent="space-between" flexDirection="column">
         <div className="dapp-menu-top">
           <Box className="branding-header">
@@ -119,7 +120,7 @@ function NavContent() {
                     className={`button-dapp-menu ${isActive ? "active" : ""}`}
                   >
                     <Typography variant="h6">
-                      <SvgIcon color="primary" component={DashboardIcon} />
+                      <img src={Vector} style={{ marginRight: "10px", width: "20px" }} />
                       <Trans>Overview</Trans>
                     </Typography>
                   </Link>

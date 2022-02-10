@@ -36,7 +36,7 @@ function TopBar({ theme, toggleTheme, handleDrawerToggle }) {
   const Bets = styled.button`
     color: #ffffff;
     padding: 5px 10px;
-    background-color: #323947;
+    background-color: transparent;
     border: none;
     border-radius: 5px;
     font-weight: bold;

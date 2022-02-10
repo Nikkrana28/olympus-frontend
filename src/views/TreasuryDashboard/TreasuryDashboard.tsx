@@ -37,18 +37,17 @@ const TreasuryDashboard = memo(() => {
             </MetricCollection>
           </Paper>
         </Box>
-        <Box className="hero-metrics" style={{ marginTop: "20px" }}>
+        {/* <Box className="hero-metrics" style={{ marginTop: "20px" }}>
           <Alert
             variant="filled"
             icon={false}
             severity={`info`}
-            // NOTE (appleseed): mui includes overflow-wrap: "break-word", but word-break: "break-word" is needed for webKit browsers
             style={{ wordBreak: "break-word" }}
           >
             Olympus is currently migrating to improved contracts. Please note that during this time, frontend metrics
             may be inaccurate.
           </Alert>
-        </Box>
+        </Box> */}
 
         <Zoom in={true}>
           <Grid container spacing={2} className="data-grid">

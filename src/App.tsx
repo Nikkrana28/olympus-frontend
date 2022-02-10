@@ -316,7 +316,10 @@ function App() {
       <ThemeProvider theme={themeMode}>
         <CssBaseline />
         {/* {isAppLoading && <LoadingSplash />} */}
-        <div className={`app ${isSmallerScreen && "tablet"} ${isSmallScreen && "mobile"} ${theme}`}>
+        <div
+          className={`app ${isSmallerScreen && "tablet"} ${isSmallScreen && "mobile"} ${theme}`}
+          style={{ backgroundColor: "#0F0F0F" }}
+        >
           {/* <Messages /> */}
           <TopBar theme={theme} toggleTheme={toggleTheme} handleDrawerToggle={handleDrawerToggle} />
           {/* <Announcement /> */}
