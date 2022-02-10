@@ -11,12 +11,14 @@ const useTheme = (): [string, (e: KeyboardEvent) => void, boolean] => {
 
   const toggleTheme = (e: KeyboardEvent) => {
     if (e.metaKey) {
-      setMode("girth");
+      // setMode("girth");
+      setMode("dark");
     } else {
       if (theme === "light") {
         setMode("dark");
       } else {
-        setMode("light");
+        // setMode("light");
+        setMode("dark");
       }
     }
   };
@@ -27,7 +29,8 @@ const useTheme = (): [string, (e: KeyboardEvent) => void, boolean] => {
       ? setMode("dark")
       : localTheme
       ? setTheme(localTheme)
-      : setMode("light");
+      : // : setMode("light");
+        setMode("dark");
     setMounted(true);
   }, []);
 

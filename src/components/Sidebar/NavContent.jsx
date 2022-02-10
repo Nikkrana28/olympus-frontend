@@ -6,6 +6,8 @@ import { ReactComponent as StakeIcon } from "../../assets/icons/stake.svg";
 import { ReactComponent as BondIcon } from "../../assets/icons/bond.svg";
 import { ReactComponent as DashboardIcon } from "../../assets/icons/dashboard.svg";
 import { ReactComponent as OlympusIcon } from "../../assets/icons/olympus-nav-header.svg";
+import Logo from "./../../assets/logo.png";
+import Betsold from "./../../assets/images/BETSold.png";
 import { ReactComponent as PoolTogetherIcon } from "../../assets/icons/33-together.svg";
 import { ReactComponent as GiveIcon } from "../../assets/icons/give.svg";
 import { ReactComponent as ZapIcon } from "../../assets/icons/zap.svg";
@@ -84,13 +86,14 @@ function NavContent() {
       <Box className="dapp-sidebar-inner" display="flex" justifyContent="space-between" flexDirection="column">
         <div className="dapp-menu-top">
           <Box className="branding-header">
-            <Link href="https://olympusdao.finance" target="_blank">
-              <SvgIcon
+            <Link href="#" target="_blank">
+              <img src={Logo} style={{ width: "50px" }} />
+              {/* <SvgIcon
                 color="primary"
-                component={OlympusIcon}
+                component={Logo}
                 viewBox="0 0 151 100"
                 style={{ minWdth: "151px", minHeight: "98px", width: "151px" }}
-              />
+              /> */}
             </Link>
 
             {address && (
@@ -117,7 +120,7 @@ function NavContent() {
                   >
                     <Typography variant="h6">
                       <SvgIcon color="primary" component={DashboardIcon} />
-                      <Trans>Dashboard</Trans>
+                      <Trans>Overview</Trans>
                     </Typography>
                   </Link>
 
@@ -136,7 +139,7 @@ function NavContent() {
                     </Typography>
                   </Link>
 
-                  <div className="dapp-menu-data discounts">
+                  {/* <div className="dapp-menu-data discounts">
                     <div className="bond-discounts">
                       <Accordion className="discounts-accordion" square defaultExpanded="true">
                         <AccordionSummary
@@ -154,8 +157,6 @@ function NavContent() {
                         </AccordionSummary>
                         <AccordionDetails>
                           {bonds.map((bond, i) => {
-                            // NOTE (appleseed): temporary for ONHOLD MIGRATION
-                            // if (bond.getBondability(networkId)) {
                             if (bond.getBondability(networkId) || bond.getLOLability(networkId)) {
                               return (
                                 <Link component={NavLink} to={`/bonds/${bond.name}`} key={i} className={"bond"}>
@@ -164,16 +165,12 @@ function NavContent() {
                                   ) : (
                                     <Typography variant="body2">
                                       {bond.displayName}
-
                                       <span className="bond-pair-roi">
                                         {bond.isLOLable[networkId]
                                           ? "--"
                                           : !bond.isBondable[networkId]
                                           ? "Sold Out"
                                           : `${bond.bondDiscount && trim(bond.bondDiscount * 100, 2)}%`}
-                                        {/* {!bond.isBondable[networkId]
-                                          ? "Sold Out"
-                                          : `${bond.bondDiscount && trim(bond.bondDiscount * 100, 2)}%`} */}
                                       </span>
                                     </Typography>
                                   )}
@@ -184,7 +181,7 @@ function NavContent() {
                         </AccordionDetails>
                       </Accordion>
                     </div>
-                  </div>
+                  </div> */}
 
                   <Link
                     component={NavLink}
@@ -201,7 +198,7 @@ function NavContent() {
                     </Typography>
                   </Link>
 
-                  <Link
+                  {/* <Link
                     component={NavLink}
                     id="zap-nav"
                     to="/zap"
@@ -213,9 +210,8 @@ function NavContent() {
                     <Box display="flex" alignItems="center">
                       <SvgIcon component={ZapIcon} color="primary" />
                       <Typography variant="h6">OlyZaps</Typography>
-                      {/* <SvgIcon component={NewIcon} viewBox="21 -2 20 20" style={{ width: "80px" }} /> */}
                     </Box>
-                  </Link>
+                  </Link> */}
 
                   {EnvHelper.isGiveEnabled(location.search) ? (
                     <>
@@ -239,7 +235,7 @@ function NavContent() {
                     <></>
                   )}
 
-                  <Link
+                  {/* <Link
                     component={NavLink}
                     id="wrap-nav"
                     to="/wrap"
@@ -250,13 +246,13 @@ function NavContent() {
                   >
                     <Box display="flex" alignItems="center">
                       <SvgIcon component={WrapIcon} color="primary" viewBox="1 0 20 22" />
-                      {/* <WrapIcon /> */}
+                   
                       <Typography variant="h6">Wrap</Typography>
-                      {/* <SvgIcon component={WrapIcon} viewBox="21 -2 20 20" style={{ width: "80px" }} /> */}
+                      
                     </Box>
-                  </Link>
+                  </Link> */}
 
-                  <Link
+                  {/* <Link
                     href={"https://synapseprotocol.com/?inputCurrency=gOHM&outputCurrency=gOHM&outputChain=43114"}
                     target="_blank"
                     className="external-site-link"
@@ -270,17 +266,26 @@ function NavContent() {
                         className="external-site-link-icon"
                       />
                     </Typography>
-                  </Link>
+                  </Link> */}
 
                   <Box className="menu-divider">
                     <Divider />
                   </Box>
 
-                  <Link href="https://pro.olympusdao.finance/" target="_blank" className="external-site-link">
+                  <Link href="https://betswamp.com/" target="_blank" className="external-site-link">
                     <Box display="flex" alignItems="center">
-                      <SvgIcon component={ProIcon} color="primary" color="primary" viewBox="0 0 50 50" />
-                      <Typography variant="h6">Olympus Pro</Typography>
+                      <img src={Betsold} />
+                      <Typography variant="h6">DECENTRALISED BETTING</Typography>
                       <SvgIcon component={ArrowUpIcon} className="external-site-link-icon" />
+                    </Box>
+                  </Link>
+                  <Box className="menu-divider">
+                    <Divider />
+                  </Box>
+                  <Link className="external-site-link" href="#">
+                    <Box display="flex" alignItems="center">
+                      <SvgIcon component={WrapIcon} color="primary" viewBox="1 0 20 22" />
+                      <Typography variant="h6">Docs</Typography>
                     </Box>
                   </Link>
 
@@ -298,9 +303,6 @@ function NavContent() {
                       3,3 Together
                     </Typography>
                   </Link> */}
-                  <Box className="menu-divider">
-                    <Divider />
-                  </Box>
                 </>
               ) : (
                 <>
@@ -336,7 +338,8 @@ function NavContent() {
             </div>
           </div>
         </div>
-        <Box className="dapp-menu-bottom" display="flex" justifyContent="space-between" flexDirection="column">
+
+        {/* <Box className="dapp-menu-bottom" display="flex" justifyContent="space-between" flexDirection="column">
           <div className="dapp-menu-external-links">
             {Object.keys(externalUrls).map((link, i) => {
               return (
@@ -348,10 +351,8 @@ function NavContent() {
               );
             })}
           </div>
-          <div className="dapp-menu-social">
-            <Social />
-          </div>
-        </Box>
+          <div className="dapp-menu-social"><Social /></div>
+        </Box> */}
       </Box>
     </Paper>
   );

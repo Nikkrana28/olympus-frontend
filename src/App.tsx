@@ -317,9 +317,9 @@ function App() {
         <CssBaseline />
         {/* {isAppLoading && <LoadingSplash />} */}
         <div className={`app ${isSmallerScreen && "tablet"} ${isSmallScreen && "mobile"} ${theme}`}>
-          <Messages />
+          {/* <Messages /> */}
           <TopBar theme={theme} toggleTheme={toggleTheme} handleDrawerToggle={handleDrawerToggle} />
-          <Announcement />
+          {/* <Announcement /> */}
           <nav className={classes.drawer}>
             {isSmallerScreen ? (
               <NavDrawer mobileOpen={mobileOpen} handleDrawerToggle={handleDrawerToggle} />

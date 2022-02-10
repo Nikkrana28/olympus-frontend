@@ -29,8 +29,12 @@ const Metric = ({
     <div className={`metric ${className}`}>
       <Box textAlign={{ xs: "left", sm: "center" }}>
         <Typography variant={labelVariant} color="textSecondary">
-          {props.label}
-          {props.tooltip && <InfoTooltip message={props.tooltip} children={undefined} />}
+          <div>
+            <div>
+              {props.label}
+              {props.tooltip && <InfoTooltip message={props.tooltip} children={undefined} />}
+            </div>
+          </div>
         </Typography>
         <Typography variant={metricVariant} style={{ width: "100%" }}>
           {props.isLoading ? <Skeleton width={loadingWidth} /> : <span>{props.metric}</span>}
@@ -40,3 +44,15 @@ const Metric = ({
   );
 };
 export default Metric;
+{
+  /* <div
+            style={{
+              position: "absolute",
+              width: "5px",
+              height: "120px",
+              left: "0px",
+              top: "0px",
+              backgroundColor: "#FF4003",
+            }}
+          ></div> */
+}
